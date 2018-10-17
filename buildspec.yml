@@ -4,4 +4,4 @@ phases:
     commands:
       - npm install time
       - zip -r lambda.zip index.js
-      - aws lambda create-function --function-name codebuild-test --runtime nodejs8.10 --zip-file fileb://lambda.zip
+      - aws lambda create-function --function-name codebuild-test --runtime nodejs8.10 --zip-file fileb://lambda.zip --role arn:aws:iam::171533584586:role/LambdaPublishSNS --handler index.handler
